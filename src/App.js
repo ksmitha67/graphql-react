@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { GraphQLEditor } from 'graphql-editor';
 
 import FileSaver from 'file-saver';
+
+import Editor from './components/Editor';
 
 
 const types = {
@@ -75,14 +76,7 @@ return (
                     } 
                 />
             </div>
-            <div className='editor'>
-        <GraphQLEditor
-            onSchemaChange={(props) => {
-            setSchema(props);
-            }}
-            schema={schema}
-        />
-        </div>
+            <Editor setSchema={setSchema} schema={schema} />
         </div>
     </>
   );
